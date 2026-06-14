@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Forte</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854');
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:4rem;
+}
+
+header p{
+    font-size:1.3rem;
+    margin-top:10px;
+}
+
+.btn{
+    margin-top:20px;
+    background:#2e7d32;
+    color:white;
+    padding:15px 30px;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+nav{
+    background:#1b5e20;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+section{
+    padding:60px 10%;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:40px;
+    color:#1b5e20;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.numeros{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.numero{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:30px;
+    border-radius:15px;
+}
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#sobre">Sobre</a>
+<a href="#culturas">Culturas</a>
+<a href="#fazendas">Fazendas</a>
+<a href="#contato">Contato</a>
+</nav>
+
+<header>
+<h1>AGRO FORTE</h1>
+<p>Produzindo alimentos com tecnologia, sustentabilidade e qualidade.</p>
+<a href="#sobre" class="btn">Conheça Mais</a>
+</header>
+
+<section id="sobre">
+<h2 class="titulo">Sobre o Agro</h2>
+<p style="text-align:center;">
+O agronegócio é um dos pilares da economia brasileira, responsável pela produção
+de alimentos, geração de empregos e desenvolvimento sustentável do campo.
+</p>
+</section>
+
+<section id="culturas">
+<h2 class="titulo">Principais Culturas</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌱 Soja</h3>
+<p>A soja é uma das principais commodities agrícolas do Brasil e possui grande importância econômica.</p>
+</div>
+
+<div class="card">
+<h3>🌽 Milho</h3>
+<p>Utilizado para alimentação humana, animal e produção de biocombustíveis.</p>
+</div>
+
+<div class="card">
+<h3>🌾 Trigo</h3>
+<p>Fundamental para a produção de farinha e diversos alimentos consumidos diariamente.</p>
+</div>
+
+</div>
+</section>
+
+<section id="fazendas">
+<h2 class="titulo">Nossas Fazendas</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🚜 Tecnologia</h3>
+<p>Máquinas modernas e agricultura de precisão.</p>
+</div>
+
+<div class="card">
+<h3>💧 Sustentabilidade</h3>
+<p>Uso consciente dos recursos naturais.</p>
+</div>
+
+<div class="card">
+<h3>📈 Produção</h3>
+<p>Alta produtividade com responsabilidade ambiental.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="titulo">Números do Campo</h2>
+
+<div class="numeros">
+<div class="numero">
+<h2 id="n1">0</h2>
+<p>Hectares</p>
+</div>
+
+<div class="numero">
+<h2 id="n2">0</h2>
+<p>Toneladas</p>
+</div>
+
+<div class="numero">
+<h2 id="n3">0</h2>
+<p>Clientes</p>
+</div>
+</div>
+</section>
+
+<section id="contato">
+<h2 class="titulo">Contato</h2>
+
+<div style="text-align:center;">
+<p>Email: contato@agroforte.com</p>
+<p>Telefone: (44) 99999-9999</p>
+</div>
+</section>
+
+<footer>
+<p>©️ 2026 Agro Forte - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function animar(id, final){
+let atual = 0;
+let intervalo = setInterval(()=>{
+atual += Math.ceil(final/100);
+
+if(atual >= final){
+atual = final;
+clearInterval(intervalo);
+}
+
+document.getElementById(id).innerText = atual;
+},20);
+}
+
+animar("n1",5000);
+animar("n2",12000);
+animar("n3",350);
+</script>
+
+</body>
+</html>
